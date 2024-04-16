@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <!---------------------css file for icons--------------->
+  <link rel="stylesheet" href="icons/all.min.css">
+  <link rel="stylesheet" href="icons/fontawesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <div class="name">
+      My TIC TAC TOE GAME
+    </div>
+    <ul id="navbar">
+      <li><a href="#"><i id="close" class="fa-solid fa-xmark"></i></a></li>
+      <li><a href="index2.html" class="active">Multiplayer</a></li>
+      <li><a href="computer.html">Computer Play</a></li>
+    </ul>
+    <div id="menu">
+      <i id="menu-bar" class="fas fa-gamepad"></i>
+      <img id="dark-mode" onclick="myFunction()" src="images/moon.png" alt="">
+    </div>
+  </nav>
+  <div class="gameContainer">
+    <div class="container">
+      <div class="line"></div>
+      <div class="box bt-0 bl-0"><span class="boxtext"></span></div>
+      <div class="box bt-0"><span class="boxtext"></span></div>
+      <div class="box bt-0 br-0"><span class="boxtext"></span></div>
+      <div class="box bl-0"><span class="boxtext"></span></div>
+      <div class="box"><span class="boxtext"></span></div>
+      <div class="box br-0"><span class="boxtext"></span></div>
+      <div class="box bl-0 bb-0"><span class="boxtext"></span></div>
+      <div class="box bb-0"><span class="boxtext"></span></div>
+      <div class="box bb-0 br-0"><span class="boxtext"></span></div>
+    </div>
+    <div class="gameInfo">
+      <h1>Welcome to My Tic Tac To Game:</h1>
+      <div>
+        <span class="info">Turn for X</span>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="imgbox">
+        <img src="excited.gif" alt="" />
+      </div>
+    </div>
+  </div>
+  <script>
+    let icon = document.getElementById('dark-mode')
+    function myFunction(){
+      let element = document.body;
+      element.classList.toggle("dark-theme")
+       if(element.classList.contains("dark-theme")){
+        icon.src = "images/sun.png";
+      }
+      else{
+        icon.src = "images/moon.png";
+      }
+    }
+  </script>
+  <script src="multiplay.js"></script>
+</body>
+
+</html>

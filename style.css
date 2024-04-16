@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+:root{
+    --primary-color:#fff; 
+   --secondary-color:#212121; 
+   --third-color: rgb(245, 61, 221);
+   --hover-color:rgb(242, 234, 250);
+   
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.dark-theme{
+    --third-color:#222;
+    --primary-color:#484848;
+    --secondary-color:#fff;
+    --hover-color:rgb(240, 238, 238);
+
+}
+
+nav {
+    background-color:var(--third-color);
+    color:var(--secondary-color);
+    height: 80px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.50s ease;
+}
+
+
+nav .name {
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    margin: 0 20px;
+    padding: 5px 3px;
+    font-weight: 500;
+}
+
+nav li a.active {
+    background-color: rgb(109, 240, 159);
+    color: black;
+    border-radius: 10px;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color:var(--primary-color);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.box {
+    border: 2px solid var(--secondary-color);
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.50s ease;
+}
+
+.box:hover {
+    background-color:var(--hover-color);
+}
+
+.info {
+    font-size: 25px;
+    font-weight: 400;
+    color:var(--secondary-color);
+    transition: all 0.50s ease;
+}
+
+#close {
+    display: none;
+}
+
+.gameInfo {
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+    color:var(--secondary-color)
+}
+
+.gameInfo h1 {
+    font-size: 2.5rem;
+}
+
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 1px 18px;
+    background: #f3e7f9;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    font-family: 'Baloo Bhaina 2';
+    /* color: var(--secondary-color); */
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.line {
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+}
+#menu{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+
+}
+#menu-bar {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#menu-bar {
+    display: none;
+}
+
+#close {
+    color: black;
+    font-size: 25px;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+/********************For Dark Mode******************/
+#dark-mode{
+    width: 30px;
+    cursor: pointer;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+@media screen and (max-width: 870px) {
+    .gameContainer {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    nav ul li a {
+        color: black;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -50px;
+        height: 50vh;
+        width: 200px;
+        background-color: #E3E6F3;
+        box-shadow: 6px 40px 60px rgb(0, 0, 0, 0.1);
+        transition: all 0.50s ease;
+        padding: 20px 0 0 5px;
+
+    }
+
+    nav ul li {
+        margin-bottom: 20px;
+    }
+
+    #menu-bar {
+        display: flex;
+    }
+
+    #close {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 477px) {
+    .gameContainer {
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 30px 10px;
+    }
+
+    nav .name {
+        font-size: 1rem;
+    }
+
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 34px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+
+    element.style {
+        transform: translate(5vw, 5vw) rotate(0deg);
+        width: 44vw;
+    }
+
+    #menu-bar {
+        display: flex;
+    }
+
+    nav ul li a {
+        color: black;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 50vh;
+        width: 200px;
+        background-color: #E3E6F3;
+        box-shadow: 6px 40px 60px rgb(0, 0, 0, 0.1);
+        transition: all 0.50s ease;
+        padding: 20px 0 0 5px;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    #navbar.active2 {
+        right: -50px;
+    }
+
+    #close {
+        display: flex;
+    }
+
+}
